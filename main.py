@@ -1,6 +1,9 @@
+# This project was inspired by the coding challenge https://www.101computing.net/battle-of-the-knights/
 import random
 import time
 from os import system
+
+system("cls")
 
 k1_health = k2_health = 100
 
@@ -103,8 +106,8 @@ while True:
     system("cls")
 
     # select a random position for both knights
-    k1_rand_pos = random.choice([k1_attack, k1_attack, k1_attack, k1_defend, rest])
-    k2_rand_pos = random.choice([k2_attack, k2_attack, k2_attack, k2_defend, rest])
+    k1_rand_pos = random.choice([k1_attack, k1_attack, k1_defend, rest])
+    k2_rand_pos = random.choice([k2_attack, k2_attack, k2_defend, rest])
     
     if k1_rand_pos == k1_attack and k2_rand_pos == k2_attack:
         k1_health -= reduce_health()
@@ -141,6 +144,7 @@ while True:
         for j in range(2):
             print(f"         {victory()[j]}")
         print(f"{death()}    {victory()[2]}")
+        break
 
     elif k2_health == 0:
         print()

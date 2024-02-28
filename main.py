@@ -7,32 +7,35 @@ system("cls")
 
 k1_health = k2_health = 100
 
-# List of first names
-first_names = [
-    "Arthur", "Edward", "William", "Geoffrey", "Roland",
-    "Percival", "Lancelot", "Gawain", "Tristan", "Galahad",
-    "Baldwin", "Oliver", "Hector", "Godfrey", "Geraint", "Lionel",
-    "Alden", "Cedric"
-]
+def generateName():
+    # List of first names
+    first_names = [
+        "Arthur", "Edward", "William", "Geoffrey", "Roland",
+        "Percival", "Lancelot", "Gawain", "Tristan", "Galahad",
+        "Baldwin", "Oliver", "Hector", "Godfrey", "Geraint", "Lionel",
+        "Alden", "Cedric"
+    ]
 
-# List of titles
-titles = [
-    "the Valiant", "the Fearless", "the Bold", "the Gallant", "the Resolute",
-    "the Brave", "the Dauntless", "the Mighty", "the Noble",
-    "the Fierce", "the Intrepid", "the Valorous", "the Lionhearted", "the Indomitable",
-    "the Steadfast", "the Unyielding", "the Unflinching", "the Stalwart"
-]
+    # List of titles
+    titles = [
+        "the Valiant", "the Fearless", "the Bold", "the Gallant", "the Resolute",
+        "the Brave", "the Dauntless", "the Mighty", "the Noble",
+        "the Fierce", "the Intrepid", "the Valorous", "the Lionhearted", "the Indomitable",
+        "the Steadfast", "the Unyielding", "the Unflinching", "the Stalwart"
+    ]
 
-k1_name = f"{random.choice(first_names)} {random.choice(titles)}"
+    k1_name = f"{random.choice(first_names)} {random.choice(titles)}"
 
-segment = k1_name.split(' ')
+    segment = k1_name.split(' ')
 
-first_names.remove(segment[0])  # remove the first name of knight 1 from the list of first names
-titles.remove(f"{segment[1]} {segment[2]}") # remove the title of knight 1 from the list of titles
+    first_names.remove(segment[0])  # remove the first name of knight 1 from the list of first names
+    titles.remove(f"{segment[1]} {segment[2]}") # remove the title of knight 1 from the list of titles
 
-k2_name = f"{random.choice(first_names)} {random.choice(titles)}"
+    k2_name = f"{random.choice(first_names)} {random.choice(titles)}"
 
+    return k1_name, k2_name
 
+k1_name, k2_name = generateName()
 def k1_attack():
     line1 = "  O   /"
     line2 = "- + -/ "
